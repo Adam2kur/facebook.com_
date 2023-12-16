@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Login page</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        background: url('./images/beautiful_6.png') center / cover no-repeat;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container
+    {
+        position: relative;
+        background: rgba(0, 0, 0, 0.787);
+        color:#fff;
+        min-height: 400px;
+        width:80%;
+        border:none;
+        border-radius: 10px;
+        display: grid;
+        grid-template:repeat(7, 1fr) / repeat(6,1fr) ;
+        grid-template-areas: 
+        'h h h h h h'
+        'f f f f f f'
+        'f f f f f f'
+        'f f f f f f'
+        'f f f f f f'
+        'f f f f f f'
+        'r r r r r r';
+    }
+    
+    .container span
+    {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        grid-area: h;
+        
+    }
+    .erro{
+        grid-area: r;
+        display: flex;
+        justify-content: center;
+        color: rgba(255, 0, 0, 0.884);
+    }
+    .container form
+    {
+    grid-area: f;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px;
+    justify-content: center;
+    }
+    .container form label 
+    {
+        font-size: 20px;
+        margin-top: 20px;
+    }
+    .container form input
+    {
+        height: 35px;
+        background: transparent;
+        border: none;
+        outline: none;
+        font-size: 18px;
+        color:#fff;
+        padding-left: 10px;
+        border-bottom: 2px solid wheat;
+    }
+    button{
+        background: rgba(255, 42, 0, 0.838);
+        height: 35px;
+        width: 80%;
+        border: none;
+        margin: 30px auto;
+        border-radius: 10px;
+        font-size: 20px;
+        cursor: pointer;
+        color: #fff;
+    }
+    @media screen and (min-width:905px){
+        .container{
+            width: 50%;
+        }
+    }
+    </style>
+</head>
+<body>
+   <div class="container">
+    <span><h2>Login Here</h2></span>
+    <form action="user_account/api" method="POST">
+    <label for="name">Username</label>
+    <input type="text" name='user_name' placeholder="Enter your full name" id="name"required>
+    <label for="pass">Password</label>
+    <input type="password" name='password' placeholder="Enter your password" id="pass"required>
+    <button type="submit" class="" id="btn">Login </button>
+    </form>
+    <div class="erro"></div>
+   </div>
+</body>
+</html>
